@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App 🌤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌎 Weather Explorer</h1>
+            <div class="search-container">
+                <input type="text" id="cityInput" placeholder="Enter city name...">
+                <button id="searchWeather">🔍 Search</button>
+                <button id="getWeatherByLocation">📍 My Location</button>
+                <button id="themeToggle">🌙</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="weather-info" class="card hidden">
+                <h2 id="city-name"></h2>
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <p id="temperature"></p>
+                <p id="description"></p>
+                <p id="humidity"></p>
+                <p id="wind-speed"></p>
+                <button onclick="addFavorite()">⭐ Add to Favorites</button>
+            </div>
+
+            <div id="forecast" class="hidden"></div>
+
+            <div id="favorites" class="card hidden">
+                <h2>🌟 Favorites</h2>
+                <ul id="favorite-list"></ul>
+            </div>
+
+            <p id="error-msg" class="error hidden">City not found. Please try again!</p>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
