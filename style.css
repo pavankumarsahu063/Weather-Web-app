@@ -149,13 +149,12 @@
      background: #333;
  }
  
- /* Error Message */
+
  .error {
      color: red;
      font-weight: bold;
  }
- 
- /* Responsive Design */
+
  @media (max-width: 768px) {
      .search-container {
          flex-direction: column;
