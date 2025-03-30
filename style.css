@@ -1,4 +1,4 @@
-/* Global Reset */
+
 * {
      margin: 0;
      padding: 0;
@@ -6,7 +6,7 @@
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
  
- /* Body Styling */
+
  body {
      min-height: 100vh;
      display: flex;
@@ -24,7 +24,7 @@
      text-align: center;
  }
  
- /* Header Styling */
+
  header h1 {
      font-size: 3rem;
      margin-bottom: 20px;
@@ -60,11 +60,10 @@
  button:hover {
      background: #e68a00;
  }
- 
- /* Card Styling */
+
  .card {
      background: rgba(255, 255, 255, 0.1);
-     /* backdrop-filter: blur(10px); */
+    
      border-radius: 20px;
      padding: 30px;
      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -80,7 +79,7 @@
      display: none;
  }
  
- /* Weather Info Styling */
+
  #weather-info img {
      width: 120px;
      margin: 15px 0;
@@ -114,7 +113,7 @@
      transform: scale(1.05);
  }
  
- /* Forecast Styling */
+ 
  #forecast {
      display: flex;
      justify-content: space-around;
