@@ -2,7 +2,7 @@ const apiKey = "fce037b6343d058cb64c4286aa55e169";
 const weatherUrl = "https://api.openweathermap.org/data/2.5/weather";
 const forecastUrl = "https://api.openweathermap.org/data/2.5/forecast";
 
-// Elements
+
 const cityInput = document.getElementById('cityInput');
 const searchBtn = document.getElementById('searchWeather');
 const locationBtn = document.getElementById('getWeatherByLocation');
@@ -13,13 +13,12 @@ const favoritesDiv = document.getElementById('favorites');
 const favoriteList = document.getElementById('favorite-list');
 const themeToggle = document.getElementById('themeToggle');
 
-// Toggle Theme
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     themeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
 });
 
-// Fetch Weather by City
+
 searchBtn.addEventListener('click', () => {
     const city = cityInput.value.trim();
     if (city) {
@@ -27,7 +26,7 @@ searchBtn.addEventListener('click', () => {
     }
 });
 
-// Fetch Weather by Geolocation
+
 locationBtn.addEventListener('click', () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -42,7 +41,7 @@ locationBtn.addEventListener('click', () => {
     }
 });
 
-// Fetch Weather by City
+
 async function getWeatherByCity(city) {
     try {
         const res = await fetch(`${weatherUrl}?q=${city}&appid=${apiKey}&units=metric`);
@@ -56,7 +55,6 @@ async function getWeatherByCity(city) {
     }
 }
 
-// Fetch Weather by Coordinates
 async function getWeatherByCoords(lat, lon) {
     try {
         const res = await fetch(`${weatherUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
@@ -70,7 +68,7 @@ async function getWeatherByCoords(lat, lon) {
     }
 }
 
-// Display Weather Data
+
 function displayWeather(data) {
     weatherInfo.classList.remove('hidden');
     errorMsg.classList.add('hidden');
@@ -82,12 +80,12 @@ function displayWeather(data) {
     document.getElementById('humidity').textContent = `Humidity: ${data.main.humidity}%`;
     document.getElementById('wind-speed').textContent = `Wind Speed: ${data.wind.speed} m/s`;
 
-    // Add animated background based on weather condition
+    /
     const weatherCondition = data.weather[0].main.toLowerCase();
     document.body.className = weatherCondition;
 }
 
-// Fetch Forecast Data
+
 async function getForecast(lat, lon) {
     try {
         const res = await fetch(`${forecastUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
@@ -100,7 +98,7 @@ async function getForecast(lat, lon) {
     }
 }
 
-// Display Forecast
+
 function displayForecast(forecast) {
     forecastDiv.classList.remove('hidden');
     forecastDiv.innerHTML = `<h2>5-Day Forecast</h2>`;
@@ -126,7 +124,7 @@ function displayForecast(forecast) {
     });
 }
 
-// Add to Favorites
+
 function addFavorite() {
     const cityName = document.getElementById('city-name').textContent;
     if (!cityName) return;
@@ -142,7 +140,7 @@ function addFavorite() {
     }
 }
 
-// Display Favorite Cities
+
 function displayFavorites() {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favoriteList.innerHTML = "";
@@ -162,7 +160,7 @@ function displayFavorites() {
     favoritesDiv.classList.toggle('hidden', favorites.length === 0);
 }
 
-// Remove Favorite City
+
 function removeFavorite(city) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites = favorites.filter(item => item !== city);
@@ -170,11 +168,11 @@ function removeFavorite(city) {
     displayFavorites();
 }
 
-// Display Error
+
 function showError(message) {
     errorMsg.textContent = message;
     errorMsg.classList.remove('hidden');
 }
 
-// Initialize Favorites on Load
+
 window.addEventListener('load', displayFavorites);
