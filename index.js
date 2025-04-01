@@ -30,7 +30,7 @@ searchBtn.addEventListener('click', () => {
     }
 });
 
-
+//Location Btn
 locationBtn.addEventListener('click', () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
