@@ -21,6 +21,8 @@ themeToggle.addEventListener("click", () => {
 });
 
 
+
+//Search Button
 searchBtn.addEventListener('click', () => {
     const city = cityInput.value.trim();
     if (city) {
