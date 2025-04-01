@@ -13,6 +13,8 @@ const favoritesDiv = document.getElementById('favorites');
 const favoriteList = document.getElementById('favorite-list');
 const themeToggle = document.getElementById('themeToggle');
 
+
+//Dark Mode
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     themeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
