@@ -45,7 +45,7 @@ locationBtn.addEventListener('click', () => {
     }
 });
 
-
+//Get Weather
 async function getWeatherByCity(city) {
     try {
         const res = await fetch(`${weatherUrl}?q=${city}&appid=${apiKey}&units=metric`);
